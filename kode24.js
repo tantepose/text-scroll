@@ -73,13 +73,15 @@ let lines = [
     " "
 ]
 
-function draw () {
-    if (i < lines.length) {
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function draw(speed) {
+    for (var i = 0; i < lines.length; i++) {
         console.log(lines[i]);
-        i++;
-        setTimeout(draw, 50);
+        await sleep(speed);
     }
 }
 
-let i = 0;
-draw();
+draw(50);
