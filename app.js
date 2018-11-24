@@ -1,3 +1,5 @@
+// text-scroll by Ole Petter Baugerød Stokke
+
 // read text.txt as lines to draw
 var fs = require('fs');
 var lines = fs.readFileSync('text.txt').toString().split("\n");
@@ -15,5 +17,5 @@ async function draw(speed) {
     }
 }
 
-// go go
+// start drawing
 draw(100);
